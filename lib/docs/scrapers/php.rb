@@ -5,6 +5,10 @@ module Docs
     include FixInternalUrlsBehavior
 
     self.name = 'PHP'
+    self.links = {
+      home: 'https://secure.php.net/',
+      code: 'https://git.php.net/?p=php-src.git;a=summary'
+    }
     self.type = 'php'
     self.release = '7.2.9'
     self.base_url = 'https://secure.php.net/manual/en/'
@@ -19,11 +23,6 @@ module Docs
       reserved.exceptions.html
       reserved.interfaces.html
       reserved.variables.html)
-
-    self.links = {
-      home: 'https://secure.php.net/',
-      code: 'https://git.php.net/?p=php-src.git;a=summary'
-    }
 
     html_filters.push 'php/internal_urls', 'php/entries', 'php/clean_html', 'title'
     text_filters.push 'php/fix_urls'
